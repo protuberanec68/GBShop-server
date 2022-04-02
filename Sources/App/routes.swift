@@ -14,6 +14,11 @@ func routes(_ app: Application) throws {
     
     let catalogDataController = CatalogDataController()
     app.get("catalogData", use: catalogDataController.catalogData)
+    
+    let reviewController = ReviewController()
+    app.get("fetchReviews", use: reviewController.fetchReviews)
+    app.post("addReview", use: reviewController.addReview)
+    app.post("removeReview", use:reviewController.removeReview)
 
     try app.register(collection: TodoController())
 }
