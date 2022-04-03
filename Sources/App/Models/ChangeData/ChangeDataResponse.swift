@@ -8,6 +8,6 @@
 import Vapor
 
 struct ChangeDataResponse: Content {
-    var result: Int
+    var result: Int?
     var errorMessage: String?
 }

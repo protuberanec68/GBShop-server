@@ -20,8 +20,7 @@ class AuthController {
         )
         //в данном случаю считаю важным - заглавная буква или строчная
         if (body.username != "Somebody" || body.password != "mypassword") {
-            response.result = 0
-            response.errorMessage = "Wrong username or password"
+            response = AuthResponse(result: 0, user: nil, errorMessage: "Wrong username or password")
         }
         return req.eventLoop.future(response)
     }
